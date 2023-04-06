@@ -1,0 +1,156 @@
+@import "./settings";
+@import "./fonts";
+@import "./mixins";
+@import "./home";
+@import "./components/dates_operations_form";
+
+@import "./components/header";
+@import "./components/navbar";
+@import "./components/slider";
+@import "./components/login";
+@import "./components/profil";
+@import "./components/previsions";
+@import "./components/footer";
+@import "./components/saisie_form";
+
+
+.form-container {
+    padding: 10px 30px;
+    margin: 0 auto;
+    background-color: #fff;
+    width: 100%;
+    max-width: 500px;
+    min-width: 400px;
+    border: 1px solid #333;
+    border-radius: 16px;
+    box-shadow: 0 0 128px rgba(0, 0, 0, 0.1),
+                0 32px 64px -48px rgba(0, 0, 0, 0.5);
+
+                header h3 {
+                    font-size: 25px;
+                    font-weight: 600;
+                    border-bottom: 1px solid #e6e6e6;
+                }
+
+                form {
+                    margin: 20px 0;
+                }
+
+                .field-group {
+                    display: flex;
+                    position: relative;
+                    flex-direction: column;
+                    margin-bottom: 10px;
+
+                    label {
+                        margin-bottom: 2px;
+                    }
+
+                    input {
+                        height: 30px;
+                        width: 100%;
+                        font-size: 16px;
+                        padding: 0 10px;
+                        border: 1px solid #ccc;
+                        border-radius: 5px;
+                        outline: none;
+                    }
+
+                    i {
+                        position: absolute;
+                        right: 15px;
+                        color: #bbb;
+                        top: 70%;
+                        transform: translateY(-50%);
+                        cursor: pointer;
+                    }
+
+                    i.active::before {
+                        color: #333;
+                        content: "\f070";
+                    }
+                }
+
+                .image input {
+                    font-size: 17px;
+                }
+
+                .button input {
+                    margin-top: 13px;
+                    height: 35px;
+                    border: none;
+                    font-size: 17px;
+                    font-weight: 400;
+                    background: #333;
+                    color: #fff;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+
+                .link {
+                    text-align: center;
+                    margin: 10px 0;
+                    font-size: 17px;
+
+                    a {
+                        color: #333;
+                    }
+
+                    a:hover {
+                        text-decoration: underline;
+                    }
+                }
+}
+
+
+.AddUserDiv {
+    display: block;
+    position: absolute;
+    bottom: 10%;
+    width: 100%;
+    text-align: center;
+
+    button{
+        margin: 0 auto;
+        font-size:3em;
+        width:50px;
+        height:50px;
+        border-radius:50%;
+        text-decoration: none;
+    }
+
+    span {
+        font-size: 0.8rem;
+    }
+}
+
+.AddUserDiv button, .closeBtn {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border:#666 1px solid;
+    cursor:pointer;
+    background-color: brown;
+    color: #fff;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.closeBtn {
+    font-size:1.5em;
+    padding: 5px;
+    width: 30px;
+    border-radius: 5px;
+}
+
+.AddUserDiv button:hover, .closeBtn:hover {
+    background-color: red;
+}
+
+.AddUserDiv button:active, .closeBtn:active {
+    background-color: rgb(214, 168, 168);
+}
+
+
