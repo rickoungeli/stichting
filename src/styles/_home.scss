@@ -1,64 +1,19 @@
 .home {
-    padding: 0 !important;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    
-    h4 {
-        text-align: start;
+    h1 {
+        text-align: center;
+        font-size: 7vw;
     }
-    p {
-        margin-bottom: 5px;
-        font-size: .8rem;
-    }
-    .section {
-        margin: 0;
-        padding: 20px;
-        background-color: $textColor;
-    }
+    .la-une {
+        width: 100%;
+        height: 70vh;
+       
 
-    .cards {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        
-        .cards-image-container {
-            width: 30%;
-            min-width: 150px;
-            overflow: hidden;
-    
-            img {
-                height: 100%;
-                width: 100%;
-                object-fit: cover;
-            }
+        .picture {
+            width: 90%;
+            height: 40vw;
+            border: 1px solid red;
+            margin: 0 auto;
         }
-    
-        .cards-text-container {
-            width: 70%;
-    
-            .cards-text {
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: space-between;
-                width: 100%;
-               
-            }
-        }
-    }
 
-    
-
-    @media screen and (min-width: 500px) {
-        .cards-text {
-            width: 45%;
-        }
-    }
-
-    @media screen and (min-width: 900px) {
-        .cards-text {
-            width: 32%;
-        }
     }
 }

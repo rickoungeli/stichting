@@ -1,10 +1,10 @@
-import { GET_ONE_USER, GET_USER, LOGIN_USER } from "../actions/user.action";
+import { GET_ONE_USER, GET_ALL_USERS, LOGIN_USER } from "../actions/user.action";
 
 const initialState = {};
 
 export default function userReducer(state = initialState, action) {
     switch (action.type) {
-        case GET_USER:
+        case GET_ALL_USERS:
             return action.payload;
         case GET_ONE_USER:
             return action.payload;

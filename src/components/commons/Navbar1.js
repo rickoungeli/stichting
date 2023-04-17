@@ -1,54 +1,62 @@
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { FaBars } from 'react-icons/fa' ;
-//import { FaHome } from 'react-icons/fa';
-import { FaTimes } from 'react-icons/fa';
+import { GET_USER } from '../../redux/actions/user.action';
+import { isEmpty } from '../Utils';
 
 const Navbar = () => {
-    const [user, setUser] = useState(localStorage.getItem('userId'))
-    const [isMobile, setIsMobile] = useState(false);
+    const user = useSelector((state) => state.userReducer);
+    const [showMenu, setShowMenu] = useState(false);
+    const [largeur, setLargeur] = useState(window.innerWidth);
+    const dispatch = useDispatch()
 
-    const handleDisconnect = () => {
-        localStorage.clear()
-        setUser('')
-        window.location='./'
+    const toggleMenu = ()=> { 
+        setShowMenu(!showMenu) ;
+        console.log(user);
+    }
+
+    const handleLogout = () => {
+        dispatch({type:GET_USER, payload:{}})
+    }
+    /*
+    const changeWidth = () => {
+        setLargeur(window.innerWidth);
+        if(window.innerWidth > 750) { setShowMenu(false)} else {setShowMenu(true)}
     }
     
+    window.addEventListener('resize', () => changeWidth());
+    */
+
     return (
-        <nav className='nav_bar bg-dark'>
-            <Link to = '/' className="navlink"><h3 className="logo">Logo</h3></Link>
-            {user? <>
-            <ul className= {isMobile? "navlinks-mobile bg-dark" : "navlinks  bg-dark"} onClick = {() => setIsMobile(false)}>
-               
-                <li className="nav-item border-bottom fs-5">
-                    <Link to = '/containers' className="nav-link">Accès aux containers</Link>
-                </li>
-                <li className="nav-item  border-bottom fs-5">
-                    <Link to = '/colis' className="nav-link">Colis</Link>
-                </li>
-                <li className="nav-item  border-bottom fs-5">
-                    <Link to = '/utilisateurs' className="nav-link">Utilisateurs</Link>
-                </li>
-                
-                <li className="nav-item  border-bottom fs-5">
-                    <Link to = '/profil' className="nav-link">Profil</Link>
-                </li>
-                
-                <li className="nav-item">
-                    <button 
-                        onClick = {() => handleDisconnect()}
-                        className="nav-link bg-dark border border-dark fs-5">Se déconnecter
-                    </button> 
-                    
-                </li>
-            </ul>
-            
-            <button className="mobile-menu-icon" onClick = {() => setIsMobile(!isMobile)}>
-                {isMobile ? <FaTimes className='fs-2'/> : <FaBars className='fs-2'/>}
-            </button>
-            </>:
-            <Link to = '/login' className="nav-link">Se connecter</Link>
+        <nav className="navbar">
+            { (showMenu || largeur>750) && 
+                <ul className="navlinks">
+                    <li className="navlink" onClick={toggleMenu} >
+                        <Link to='/'>Stichting</Link>
+                    </li>
+                    {!isEmpty(user) && user &&
+                    <div className='navlinks'>
+                        <li className="navlink" onClick={toggleMenu} >
+                            <Link to='/colis' className="" >Colis</Link>
+                        </li>
+
+                        <li className="navlink" onClick={toggleMenu} >
+                            <Link to='/clients' className="">Clients</Link>
+                        </li>
+                        <li className="navlink" onClick={toggleMenu} >
+                            <Link to='/utilisateurs' className="" aria-current="page" >Utilisateurs</Link>
+                        </li>
+                    </div>
+                    }
+                    {(!isEmpty(user) && user) ? 
+                    <button onClick={handleLogout()}>Déconnexion</button> :
+                    <li className="navlink" onClick={toggleMenu} >
+                        <Link to='/login' className="" >Connexion</Link>
+                    </li>
+                    }
+                </ul>
             }
+            <button onClick={toggleMenu} className='mobile-menu-icon'>BTN</button>
         </nav>
     );
 };

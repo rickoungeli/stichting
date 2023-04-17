@@ -1,10 +1,12 @@
 import React from 'react';
+import Register from '../components/auth/SignUp'
 
 const User = () => {
   return (
-    <div>
-      
-    </div>
+      <div>
+        <Register />
+        
+      </div>
   );
 };
 

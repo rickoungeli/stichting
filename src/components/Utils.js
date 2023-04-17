@@ -6,3 +6,7 @@ export const isEmpty = (value) => {
         (typeof value === "string" && value.trim().length ===0)
     )
 }
+
+export const postAccueil = (data) => {
+    //axios.post('')
+}
