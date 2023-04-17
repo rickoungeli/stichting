@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/stichting/static/css/main.50ed2c85.css",
+    "main.js": "/stichting/static/js/main.2e51b8f3.js",
+    "index.html": "/stichting/index.html",
+    "main.50ed2c85.css.map": "/stichting/static/css/main.50ed2c85.css.map",
+    "main.2e51b8f3.js.map": "/stichting/static/js/main.2e51b8f3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.50ed2c85.css",
+    "static/js/main.2e51b8f3.js"
+  ]
+}
