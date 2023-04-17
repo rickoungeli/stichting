@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/stichting/static/css/main.50ed2c85.css",
-    "main.js": "/stichting/static/js/main.05930f5a.js",
-    "index.html": "/stichting/index.html",
-    "main.50ed2c85.css.map": "/stichting/static/css/main.50ed2c85.css.map",
-    "main.05930f5a.js.map": "/stichting/static/js/main.05930f5a.js.map"
+    "main.css": "/static/css/main.50ed2c85.css",
+    "main.js": "/static/js/main.acdf7a4d.js",
+    "index.html": "/index.html",
+    "main.50ed2c85.css.map": "/static/css/main.50ed2c85.css.map",
+    "main.acdf7a4d.js.map": "/static/js/main.acdf7a4d.js.map"
   },
   "entrypoints": [
     "static/css/main.50ed2c85.css",
-    "static/js/main.05930f5a.js"
+    "static/js/main.acdf7a4d.js"
   ]
 }
